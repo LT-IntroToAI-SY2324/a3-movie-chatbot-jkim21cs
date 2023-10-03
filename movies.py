@@ -435,4 +435,16 @@ movie_db: List[Tuple[str, str, int, List[str]]] = [
             "spike lee",
         ],
     )
+    (
+        "forest gump",
+        "robert zemekis",
+        1994,
+        [
+              "Tom Hanks",
+              "Robin Wright", 
+              "Gary Sinise", 
+              "Sally Field", 
+              "Hanna R. Hall"
+        ]
+    )
 ]

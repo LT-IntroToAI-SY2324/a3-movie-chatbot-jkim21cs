@@ -7,7 +7,7 @@ Assignment 3 is all about creating this natural language query system.  In order
 
 
 2. What movie did you add to the `movies.py` file?  What year was it made? Any specific reason you added that movie?
-
+    Forest Gump. It was made in 1994. We were talking about Forest Gump in AP Lit to discuss plot structure and I remembered really loving it when I watched it the first time. 
 
 3. What pattern / action did you add to the paList data structure?  Why do you think that is a useful pattern / action?
 
@@ -16,7 +16,7 @@ Assignment 3 is all about creating this natural language query system.  In order
 
 
 5. What was the most difficult portion of this assignment?
-
+    
 
 6. Did you write a new assert for your pattern action?
 
