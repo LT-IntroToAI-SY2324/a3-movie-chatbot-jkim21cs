@@ -224,6 +224,7 @@ pa_list: List[Tuple[List[str], Callable[[List[str]], List[Any]]]] = [
     (str.split("who was the director of %"), director_by_title),
     (str.split("what movies were directed by %"), title_by_director),
     (str.split("who acted in %"), actors_by_title),
+    (str.split("cast of %"), actors_by_title),
     (str.split("when was % made"), year_by_title),
     (str.split("in what movies did % appear"), title_by_actor),
     (["bye"], bye_action),
@@ -242,7 +243,12 @@ def search_pa_list(src: List[str]) -> List[str]:
         a list of answers. Will be ["I don't understand"] if it finds no matches and
         ["No answers"] if it finds a match but no answers
     """
-    pass
+    for pat, act in pa_list:
+        mat=match(pat,src)
+        if mat is not None: 
+            answer=act(mat)
+            return answer if answer else["No answers"]
+        return["I don't understand"]
 
 
 def query_loop() -> None:
@@ -323,5 +329,7 @@ if __name__ == "__main__":
     assert sorted(
         search_pa_list(["what", "movies", "were", "made", "in", "2020"])
     ) == sorted(["No answers"]), "failed search_pa_list test 3"
+    assert sorted(search_pa_list(["who", "directed", "forest gump"])
+    ) == sorted(['robert zemekis']), "failed search_pa_list test 4"
 
     print("All tests passed!")
